@@ -1,0 +1,29 @@
+// Monochromatic Palette
+// ----------------------------------------
+$color-black:				#000;
+$color-gray-darker: 		#111;
+$color-gray-dark: 			#333;
+$color-gray:				#777;
+$color-gray-light:			#ccc;
+$color-gray-lighter:		#eee;
+$color-white:				#fff;
+
+// Brand Palette
+// ----------------------------------------
+$color-blue: 				#09befb;
+$color-blue-highlight: 	lighten($color-blue, 15%);
+$color-blue-shadow: 		darken($color-blue, 15%);
+
+$color-purple: 			#171725;
+$color-green: 				#5cb85c;
+$color-orange: 			#f0ad4e;
+$color-red: 				#d9534f;
+
+// Typography
+// ----------------------------------------
+$color-text: 				$color-gray-dark;
+
+// Links
+// ----------------------------------------
+$color-link: 				$color-blue;
+$color-link-hover: 		$color-blue-shadow;

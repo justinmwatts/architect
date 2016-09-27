@@ -1,0 +1,133 @@
+// Demo
+
+
+// Settings
+// ------------------------------------------------------------
+@import '../assets/scss/settings.colors';
+@import '../assets/scss/settings.globals';
+
+// Tools
+// ------------------------------------------------------------
+@import '../assets/scss/tools.custom-mixins';
+
+
+// Elements
+// ------------------------------------------------------------
+.code {
+	display: block;
+}
+
+
+// Components
+// ------------------------------------------------------------
+
+// Components - Header
+// ----------------------------------------
+.header {
+	background-color: darken($color-purple, 6%);
+	padding: 0 0 20px 0;
+
+	&__heading {
+
+		@include media(medium-up) {
+			font-size: 48px;
+		}
+	}
+
+	&__sub-heading {
+		font-size: 16px;
+
+		@include media(medium-up) {
+			font-size: 20px;
+		}
+	}
+} // heading
+
+
+// Components - Colors
+// ----------------------------------------
+.color {
+	height: 75px;
+	float: left;
+	font-size: 14px;
+	margin: 5px;
+	padding: 5px;
+	@include radius();
+	width: 150px;
+}
+
+.color--black {
+	background-color: $color-black;
+}
+
+.color--gray-darker {
+	background-color: $color-gray-darker;
+}
+
+.color--gray-dark {
+	background-color: $color-gray-dark;
+}
+
+.color--gray {
+	background-color: $color-gray;
+}
+
+.color--gray-light {
+	background-color: $color-gray-light;
+}
+
+.color--gray-lighter {
+	background-color: $color-gray-lighter;
+}
+
+.color--white {
+	background-color: $color-white;
+}
+
+.color--blue {
+	background-color: $color-blue;
+}
+
+.color--purple {
+	background-color: $color-purple;
+}
+
+.color--green {
+	background-color: $color-green;
+}
+
+.color--orange {
+	background-color: $color-orange;
+}
+
+.color--red {
+	background-color: $color-red;
+}
+
+
+// Components - Grid System Demo
+// ----------------------------------------
+.demo-col {
+	background-color: $color-gray-darker;
+	border: 1px solid darken($color-gray-darker, 12%);
+	margin-top: 10px;
+	min-height: 60px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+// Components - Highlights
+// ----------------------------------------
+.highlight {
+	background-color: lighten($color-purple, 8%);
+	border: 1px solid darken($color-purple, 4%);
+	padding: 20px;
+	@include radius();
+}
+
+
+// Trumps
+// ------------------------------------------------------------
+.font-dark {
+	color: $color-black !important;
+}

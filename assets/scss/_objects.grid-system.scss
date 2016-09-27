@@ -1,0 +1,346 @@
+// Grid System
+
+
+// Mixins
+// ------------------------------------------------------------
+
+// Column offsets
+// ----------------------------------------
+@mixin column-offsets(
+	$column-offset-default: true,
+	$screen-size: small
+) {
+	[class^="col-"] {
+
+		@if $column-offset-default {			
+
+			// Default offsets are only needed for medium-up screens
+			@include media(medium-up) {
+				@for $i from 1 through $grid-cols {
+					&.offset-#{$i} {
+						margin-left: 100% / $grid-cols * $i;
+					}			
+				}
+			}
+
+		} @else {			
+			@for $i from 1 through $grid-cols {
+				&.offset-#{$screen-size}-#{$i} {
+					margin-left: 100% / $grid-cols * $i;
+				}
+			}
+		}
+	}
+}
+
+
+// Grid normalizer
+// ------------------------------------------------------------
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	html .row {
+		height: 1%;
+	}
+	
+	@include media(device) {
+		-webkit-text-size-adjust: none;
+	}
+}
+
+
+// Container
+// ------------------------------------------------------------
+.container {
+	margin: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	width: 100%;
+
+	// Fixed container widths
+	@if $grid-fixed-widths {
+		@include media(medium-up) {
+			margin: 0 auto;
+			width: $grid-medium;
+		}
+
+		@include media(large-up) {
+			width: $grid-large;
+		}
+		
+		@include media(xlarge-up) {
+			width: $grid-xlarge;
+		}
+	} 
+	// Fluid container widths
+	@else {
+		@include media(xlarge-up) {
+			margin: 0 auto;
+			width: $grid-xlarge;
+		}
+	}
+} // container
+
+
+// Rows
+// ------------------------------------------------------------
+.row {
+	display: block;
+	width: 100%;
+	
+	.row {
+		margin: 0 -10px;
+		width: auto;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	&.with-spacing {
+		margin-bottom: $grid-row-with-spacing;
+	}
+	
+	&.with-less-spacing {
+		margin-bottom: $grid-row-with-spacing / 2;
+	}
+	
+	&.with-more-spacing {
+		margin-bottom: $grid-row-with-spacing * 2;
+	}
+	
+	&.centered {
+		text-align: center;
+		
+		div {
+			float: none;
+			display: inline-block;
+			text-align: left;
+			margin: 0 -2px;
+		}
+	}
+	
+	&.no-gutters {
+		padding: 0 $grid-col-gutter-width;
+		
+		[class*="col-"] {
+			padding: 0;
+		}
+	}
+
+	&.no-row-gutters {
+		padding: 0;
+	}
+	
+	&.large-gutters {
+		
+		[class*="col-"] {
+			padding: 0 $grid-col-gutter-width * 2;
+		}
+	}
+
+	&.row-full-width {
+		padding: 0;
+		
+		[class*="col-"] {
+			padding: 0;
+		}
+	}
+	
+	&:before,
+	&:after {
+		display: block;
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+		content: '';
+	}
+	
+	&:after {
+		clear: both;
+	}
+} // row
+
+
+// Columns
+// ------------------------------------------------------------
+[class^="col-"] {
+	float: left;
+	min-height: 1px;
+	padding: 0 $grid-col-gutter-width;
+}
+
+// Columns - Default
+// ----------------------------------------
+@for $i from 1 through $grid-cols {
+	.col-#{$i} {
+		width: 100%;
+
+		@include media(medium-up) {
+			width: 100% / $grid-cols * $i;
+		}
+	}
+}
+
+// Column default fractions
+.col-half {
+	width: 100%;
+
+	@include media(medium-up) {
+		width: 50%;
+	}
+}
+
+.col-3rd {
+	width: 100%;
+
+	@include media(medium-up) {
+		width: (100% / 3);
+	}
+}
+
+.col-2-3rd {
+	width: 100%;
+
+	@include media(medium-up) {
+		width: (100% / 3) * 2;
+	}
+}
+
+.col-4th {
+	width: 100%;
+
+	@include media(medium-up) {
+		width: (100% / 4);
+	}
+}
+
+.col-3-4th {
+	width: 100%;
+
+	@include media(medium-up) {
+		width: (100% / 4) * 3;
+	}
+}
+
+.col-5th {
+	width: 100%;
+
+	@include media(medium-up) {
+		width: (100% / 5);
+	}
+}
+
+// Columns - small
+// ----------------------------------------
+@include media(small-only) {
+	@for $i from 1 through $grid-cols {
+		.col-small-#{$i} {
+			width: 100% / $grid-cols * $i;
+		}
+	}
+}
+
+// Columns - medium
+// ----------------------------------------
+@include media(medium-only) {
+	@for $i from 1 through $grid-cols {
+		.col-medium-#{$i} {
+			width: 100% / $grid-cols * $i;
+		}
+	}
+}
+
+// Columns - large
+// ----------------------------------------
+@include media(large-only) {
+	@for $i from 1 through $grid-cols {
+		.col-large-#{$i} {
+			width: 100% / $grid-cols * $i;
+		}
+	}
+}
+
+// Columns - xlarge
+// ----------------------------------------
+@include media(xlarge-only) {
+	@for $i from 1 through $grid-cols {
+		.col-xlarge-#{$i} {
+			width: 100% / $grid-cols * $i;
+		}
+	}
+}
+
+
+// Column offsets
+// ------------------------------------------------------------
+
+// Column offsets - Default
+// ----------------------------------------
+@include column-offsets($column-offset-default: true);
+
+// Column offsets - Default grid fractions
+[class^="col-"].offset-half {
+	margin-left: (100% / 2);
+}
+
+[class^="col-"].offset-3rd {
+	margin-left: (100% / 3);
+}
+
+[class^="col-"].offset-2-3rd {
+	margin-left: ((100% / 3) * 2);
+}
+
+[class^="col-"].offset-4th {
+	margin-left: (100% / 4);
+}
+
+[class^="col-"].offset-3-4th {
+	margin-left: ((100% / 4) * 3);
+}
+
+[class^="col-"].offset-5th {
+	margin-left: (100% / 5);
+}
+
+[class^="col-"].offset-2-5th {
+	margin-left: ((100% / 5) * 2);
+}
+
+[class^="col-"].offset-3-5th {
+	margin-left: ((100% / 5) * 3);
+}
+
+[class^="col-"].offset-4-5th {
+	margin-left: ((100% / 5) * 4);
+}
+
+// Column offsets - small
+// ----------------------------------------
+@include media(small-only) {
+	@include column-offsets($column-offset-default: false, $screen-size: small);
+}
+
+// Column offsets - medium
+// ----------------------------------------
+@include media(medium-only) {
+	@include column-offsets($column-offset-default: false, $screen-size: medium);
+}
+
+// Column offsets - large
+// ----------------------------------------
+@include media(large-only) {
+	@include column-offsets($column-offset-default: false, $screen-size: large);
+}
+
+// Column offsets - xlarge
+// ----------------------------------------
+@include media(xlarge-only) {
+	@include column-offsets($column-offset-default: false, $screen-size: xlarge);
+}

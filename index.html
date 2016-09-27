@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Architect - CSS Framework, Advanced Grid System</title>
+	<meta name="description" content="Front End Framework - Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.">
+	<meta name="author" content="Justin Watts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/app.css" />
+	<link rel="stylesheet" href="demo/demo.css" />
+</head>
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="header__heading text-center top50">Architect</h1>
+					<h2 class="header__sub-heading text-center">Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.</h2>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+			<div class="row top50 bottom50">
+				<div class="col-12">
+					<a href="#" class="button button--xlarge button--center" role="button">Download Architect</a>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</div><!--/.container-->
+	</header><!--/.header-->
+
+	<article role="main">
+		<section class="container top20">
+			<div class="row">
+				<div class="col-12">
+					<h2>Typography</h2>
+					<h1>Heading 1</h1>
+					<h2>Heading 2</h2>
+					<h3>Heading 3</h3>
+					<h4>Heading 4</h4>
+					<h5>Heading 5</h5>
+					<h6>Heading 6</h6>
+					<p>Lorem ipsum dolor sit amet, eros auctor odio magna, pellentesque nec in vitae, facilisis auctor dui leo sollicitudin scelerisque lacus, per odio. Elit molestie turpis nec nibh. Vel eleifend faucibus corporis diam eget sed.</p>
+					<p>Lorem ipsum dolor sit amet, eros auctor odio magna, pellentesque nec in vitae, facilisis auctor dui leo sollicitudin scelerisque lacus, per odio. Elit molestie turpis nec nibh. Vel eleifend faucibus corporis diam eget sed.</p>
+					<br>
+					<a href="#">Links</a>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top20">
+			<div class="row">
+				<div class="col-12">
+					<h2>Buttons</h2>
+					<br>
+					<a href="#" class="button button--xsmall" role="button">xSmall Button</a>
+					<br><br>
+					<a href="#" class="button button--small" role="button">Small Button</a>
+					<br><br>
+					<a href="#" class="button" role="button">Button</a>
+					<br><br>
+					<a href="#" class="button button--large" role="button">Large Button</a>
+					<br><br>
+					<a href="#" class="button button--xlarge" role="button">xLarge Button</a>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top20">
+			<div class="row">
+				<div class="col-12">
+					<h2>Lists</h2>
+					<h4>Unordered lists</h4>
+					<ul>
+						<li>List item 1</li>
+						<li>List item 2</li>
+						<li>List item 3</li>
+					</ul>
+
+					<h4>Ordered lists</h4>
+					<ol>
+						<li>List item 1</li>
+						<li>List item 2</li>
+						<li>List item 3</li>
+					</ol>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top20">
+			<div class="row">
+				<div class="col-12">
+					<h2>Colors</h2>
+					<h4>Monochromatic Palette</h4>
+					<div class="color color--black">$color-black</div>
+					<div class="color color--gray-darker">$color-gray-darker</div>
+					<div class="color color--gray-dark">$color-gray-dark</div>
+					<div class="color color--gray">$color-gray</div>
+					<div class="color color--gray-light"><span class="font-dark">$color-gray-light</span></div>
+					<div class="color color--gray-lighter"><span class="font-dark">$color-gray-lighter</span></div>
+					<div class="color color--white"><span class="font-dark">$color-white</span></div>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+
+			<div class="row">
+				<div class="col-12">
+					<h4>Brand Palette</h4>
+					<div class="color color--blue">$color-blue</div>
+					<div class="color color--purple">$color-purple</div>
+					<div class="color color--green">$color-green</div>
+					<div class="color color--orange">$color-orange</div>
+					<div class="color color--red">$color-red</div>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top40">
+			<div class="row">
+				<div class="col-12">
+					<h2>Media Queries</h2>
+					<p>These are the media queries used for the grid system. They are available with media query mixin:</p>
+					<figure class="highlight top10">
+						<code>
+							<span class="code">@include media() { ... }</span>
+						</code>
+					</figure><!--/.highlight-->
+
+					<h4>Min-width media queries</h4>
+					<figure class="highlight top10">
+						<code>
+							<span class="code">// Medium devices and up (tablet, 768px and up)</span>
+							<span class="code">@media "only screen" and (min-width: $screen-medium)</span>
+							<span class="code">// Mixin:</span>
+							<span class="code">@include media(medium-up) { ... }</span>
+							<br>
+							<span class="code">// Large devices and up (desktop, 980px and up)</span>
+							<span class="code">@media "only screen" and (min-width: $screen-large)</span>
+							<span class="code">// Mixin:</span>
+							<span class="code">@include media(large-up) { ... }</span>
+							<br>
+							<span class="code">// xLarge devices (desktop, 1280px and up)</span>
+							<span class="code">@media "only screen" and (min-width: $screen-xlarge)</span>
+							<span class="code">// Mixin:</span>
+							<span class="code">@include media(xlarge-up) { ... }</span>
+						</code>
+					</figure><!--/.highlight-->
+
+					<h4>Device specific media queries</h4>
+					<figure class="highlight top10">
+						<code>
+							<span class="code">// Small devices only (mobile, up to 767px)</span>
+							<span class="code">@media "only screen" and (max-width: $screen-medium)</span>
+							<span class="code">// Mixin:</span>
+							<span class="code">@include media(small-only) { ... }</span>
+							<br>
+							<span class="code">// Medium devices only (tablet, 768px to 979px)</span>
+							<span class="code">@media "only screen" and (min-width: $screen-medium) and (max-width: ($screen-large - 1)</span>
+							<span class="code">// Mixin:</span>
+							<span class="code">@include media(medium-only) { ... }</span>
+							<br>
+							<span class="code">// Large devices only (desktop, 980px to 1279px)</span>
+							<span class="code">@media "only screen" and (min-width: $screen-large) and (max-width: ($screen-xlarge - 1)</span>
+							<span class="code">// Mixin:</span>
+							<span class="code">@include media(large-only) { ... }</span>
+							<br>
+							<span class="code">// xLarge devices only (desktop, 1280px and up)</span>
+							<span class="code">@media "only screen" and (min-width: $screen-xlarge)</span>
+							<span class="code">// Mixin:</span>
+							<span class="code">@include media(xlarge-only) { ... }</span>
+						</code>
+					</figure><!--/.highlight-->
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top40">
+			<div class="row">
+				<div class="col-12">
+					<h2>Basic 12 Column Grid</h2>
+					<p>The grid column amount can easily be changed to any desired amount. The grid is set to 12 columns by default. In _settings.global.scss, use $grid-cols to update the column amount. Column gutters are set to 10px by default. In _settings.global.scss, use $grid-col-gutter-width to update the gutter width.</p>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+			<div class="row top20">
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+				<div class="col-1 demo-col">col-1</div>
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top40">
+			<div class="row">
+				<div class="col-12">
+					<h2>Column Offsets</h2>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+
+			<div class="row top20">
+				<div class="col-8 offset-2 demo-col">col-8, offset-2</div>
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top40">
+			<div class="row">
+				<div class="col-12">
+					<h2>Nesting</h2>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+
+			<div class="row top20">
+				<div class="col-10 offset-1 demo-col">
+					col-10, offset-1
+					<div class="row">
+						<div class="col-4 demo-col">col-4</div>
+						<div class="col-4 demo-col">col-4</div>
+						<div class="col-4 demo-col">col-4</div>
+					</div><!--/.row-->
+				</div>
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top40">
+			<div class="row">
+				<div class="col-12">
+					<h2>Grid Options</h2>
+					<p>Choose fluid or fixed grid widths in _settings.globals.scss.</p>
+					<figure class="highlight top10">
+						<code>
+							<span class="code">// Fluid grid width</span>
+							<span class="code">$grid-fixed-widths: false;</span>
+							<br>
+							<span class="code">// Fixed grid widths</span>
+							<span class="code">$grid-fixed-widths: true;</span>
+						</code>
+					</figure><!--/.highlight-->
+
+					<p>Choose screen specific column classes that allow you to target specific screen widths.</p>
+					<figure class="highlight top10">
+						<code>
+							<span class="code">// Small devices only (mobile, 768px and up). Class prefix:</span>
+							<span class="code">col-small-</span>
+							<br>
+							<span class="code">// Medium devices only (tablet, 768px to 979px). Class prefix:</span>
+							<span class="code">col-medium-</span>
+							<br>
+							<span class="code">// Large devices only (desktop, 980px to 1279px). Class prefix:</span>
+							<span class="code">col-large-</span>
+							<br>
+							<span class="code">// xLarge devices only (desktop, 1280px and up). Class prefix:</span>
+							<span class="code">col-xlarge-</span>
+						</code>
+					</figure><!--/.highlight-->
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top40">
+			<div class="row">
+				<div class="col-12">
+					<h2>Example: Small, Medium, Large, xLarge</h2>
+					<p>This example takes it to the extreme and is not very practical but it demonstrates the grid's flexibility. Having this flexibility, allows designers to not be restricted to a single grid layout for various screen sizes.</p>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+			
+			<div class="row top20">
+				<div class="col-4 col-small-6 col-medium-6 col-xlarge-3 demo-col">col-4 | col-small-6 | col-medium-6 | col-xlarge-3</div>
+				<div class="col-4 col-small-6 col-medium-6 col-xlarge-6 demo-col">col-4 | col-small-6 | col-medium-6 | col-xlarge-6</div>
+				<div class="col-4 col-small-12 col-medium-12 col-xlarge-3 demo-col">col-4 | col-small-12 | col-medium-12 | col-xlarge-3</div>
+			</div><!--/.row-->
+			
+			<div class="row top20">
+				<div class="col-6 offset-3 col-small-10 offset-small-1 col-xlarge-8 offset-xlarge-2 demo-col">col-6, offset-3 | col-small-10, offset-small-1 | col-xlarge-8, offest-xlarge 2</div>
+			</div><!--/.row-->
+		</section><!--/.container-->
+
+		<section class="container top100">
+			<div class="row">
+				<div class="col-12">
+					<a href="#" class="button button--xlarge button--center" role="button">Download Architect</a>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+		</section><!--/.container-->
+	</article>
+
+	<footer class="container top100 bottom20">
+		<div class="row">
+			<div class="col-12">
+				<p>Crafted by <a href="http://justinwatts.co/">Justin Watts</a> | Code licensed under <a href="https://github.com/justinmwatts/architect/blob/master/LICENSE">MIT</a></p>
+			</div><!--/.col-12-->
+		</div><!--/.row-->
+	</footer><!--/.container-->
+
+</body>
+</html>
