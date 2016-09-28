@@ -1,0 +1,13 @@
+////
+// Elements - Extras
+////
+
+hr {
+	border-top: 1px solid $color-gray-light;
+	border-right: none;
+	border-bottom: none;
+	border-left: none;
+	display: block;
+	margin: $base-spacing-unit 0;
+	width: 100%;
+}

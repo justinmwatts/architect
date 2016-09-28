@@ -2,7 +2,27 @@
 
 Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.
 
-### Author
+
+###Version
+1.1.2
+
+
+### Setup
+
+```sh
+$ cd architect/gulp/
+$ npm install
+$ gulp
+```
+
+Gulp is setup to compile sass, compile js, watch your sass/js/html for file updates and run the connect webserver.
+
+You'll want to remove demo.scss from src/sass/ and demo.css from dist/css/.
+
+If you prefer another task runner or package manager, no problem. Architect will work with your choosing. Just remove the gulp director in the root.
+
+
+### Creator
 Justin Watts
 
 <http://justinwatts.co>

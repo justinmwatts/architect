@@ -1,0 +1,42 @@
+////
+// Modals
+////
+
+.modal {
+	@include backface(hidden);
+	background-color: rgba(0,0,0,.75);
+	height: 100%;
+	opacity: 0;
+	overflow-y: scroll;
+	position: fixed;
+	top: 0;
+	@include transition(.2s);
+	visibility: hidden;
+	width: 100%;
+	z-index: 9999;
+
+	.ie7 &,
+	.ie8 & {
+		background-color: #222;
+	}
+
+	&__content {
+		opacity: 0;
+		@include scale(.95);
+		@include transition(.15s);
+		z-index: 9999;
+	}
+
+	// Active Modal
+	&.is-active {
+		opacity: 1;
+		@include transition(.2s);
+		visibility: visible;
+
+		.modal__content {
+			opacity: 1;
+			@include scale(1);
+			@include transition-more(all .15s ease-in-out .05s);
+		}
+	}
+} // modal

@@ -1,0 +1,64 @@
+////
+// Navigations
+////
+
+.nav {
+
+	 &__list-item {
+		float: left;
+		position: relative;
+
+		a {
+			text-decoration: none;
+			display: block;
+		}
+	}
+
+	ul ul {
+		display: none;
+	}
+	
+} // nav
+
+
+// Nav Toggle
+// ------------------------------------------------------------
+.nav-toggle {
+	background-color: transparent;
+	padding: 15px 8px 5px 8px;
+	@include transition();
+
+	&:hover {
+		background-color: $color-blue;
+	}
+
+	&__bar {
+		background-color: $color-white;
+		display: block;
+		height: 2px;
+		margin-bottom: 12px;
+		@include transition(.2s);
+		width: 32px;
+	}
+
+	// Active nav toggle
+	&.is-active {
+
+		.nav-toggle__bar {
+
+			&:first-child {
+				position: relative;
+				@include rotate(45deg);
+				top: 8px;
+				@include transition(.2s);
+			}
+
+			&:last-child {
+				position: relative;
+				@include rotate(135deg);
+				top: -6px;
+				@include transition(.2s);
+			}
+		}
+	} // &.is-active
+} // nav-toggle

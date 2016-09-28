@@ -1,0 +1,84 @@
+////
+// Elements - Typography
+////
+
+// Headings
+// ---------------------------------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $open-sans;
+	font-weight: 700; // bold
+	line-height: $base-line-height;
+	margin-top: 20px;
+	max-height: 999999px; /*Android Font Boosting Fix*/
+	text-rendering: optimizelegibility;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 30px
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+
+// Paragraphs
+// ---------------------------------------------------------------------------
+p {
+	line-height: $base-line-height;
+	margin-top: 10px;
+	max-height: 999999px; /*Android Font Boosting Fix*/
+}
+
+
+// Font Styles
+// ---------------------------------------------------------------------------
+small {
+	font-size: 85%;
+}
+
+strong {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -5px;
+}
+
+sub {
+	top: 6px;
+}
+

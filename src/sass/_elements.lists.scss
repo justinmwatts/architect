@@ -1,0 +1,21 @@
+////
+// Elements - lists
+////
+
+ul {
+	list-style: square outside;
+	margin: 10px 0 0 40px;
+}
+
+ol {
+	margin: 10px 0 0 40px;
+}
+
+li > {
+
+	ul,
+	ol {
+		margin-left: 2 * $base-spacing-unit;
+		margin-bottom: 0;
+	}
+}

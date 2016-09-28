@@ -1,0 +1,358 @@
+////
+// Tools - Mixins
+////
+
+// Transitions
+// ----------------------------------------
+@mixin transition($speed: .15s) {
+	-webkit-transition: all $speed ease-in-out;
+	transition: all $speed ease-in-out;
+}
+
+@mixin transition-more($transition...) {
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+
+// Scale
+// ----------------------------------------
+@mixin scale($scale) {
+	-webkit-transform: scale($scale);
+	transform: scale($scale);
+}
+
+
+// Rotate
+// ----------------------------------------
+@mixin rotate($rotate) {
+	-webkit-transform: rotate($rotate);
+	transform: rotate($rotate);
+}
+
+
+// Translate
+// ----------------------------------------
+@mixin translate($translate) {
+	-webkit-transform: translate($translate);
+	transform: translate($translate);
+}
+
+
+// Translate3d
+// ----------------------------------------
+@mixin translate3d($translate3d) {
+	-webkit-transform: translate3d($translate3d);
+	transform: translate3d($translate3d);
+	@include backface;
+}
+
+
+// Backface Visibility
+// ----------------------------------------
+@mixin backface($backface: hidden) {
+	-webkit-backface-visibility: $backface;
+	backface-visibility: $backface;
+}
+
+
+// Animation
+// ----------------------------------------
+@mixin animate($name, $speed: .2s, $ease: ease-in, $delay: .5s, $count: 1, $when: both) {
+	-webkit-animation: $name $speed $ease $delay $count $when;
+	animation: $name $speed $ease $delay $count $when;
+}
+
+@mixin animate-more($properties) {
+	-webkit-animation: $properties;
+	animation: $properties;
+}
+
+
+// Keyframes
+// ----------------------------------------
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+
+// Boarder radius
+// ----------------------------------------
+@mixin radius($radius: 3px) {
+	border-radius: $radius;
+}
+
+@mixin radius-4corners($top-left: 3px, $top-right: 3px, $bottom-right: 3px, $bottom-left: 3px) {
+	border-top-left-radius: $top-left;
+	border-top-right-radius: $top-right;
+	border-bottom-right-radius: $bottom-right;
+	border-bottom-left-radius: $bottom-left;
+}
+
+
+// Triangles
+// ----------------------------------------
+@mixin triangle-base {
+	position: absolute;
+	@include size(0);
+	content: '';
+}
+
+@mixin triangle($direction, $width, $height, $color) {
+	@if ($direction == "up") {
+		@include triangle-base();
+		border: {
+			left: $width solid transparent;
+			right: $width solid transparent;
+			bottom: $height solid $color;
+		}
+	}
+	
+	@else if ($direction == "down") {
+		@include triangle-base();
+		border: {
+			left: $width solid transparent;
+			right: $width solid transparent;
+			top: $height solid $color;
+		}
+	}
+	
+	@else if ($direction == "left") {
+		@include triangle-base();
+		border: {
+			top: $width solid transparent;
+			bottom: $width solid transparent;
+			right: $height solid $color;
+		}
+	}
+	
+	@else if ($direction == "right") {
+		@include triangle-base();
+		border: {
+			top: $width solid transparent;
+			bottom: $width solid transparent;
+			left: $height solid $color;
+		}
+	}
+}
+
+
+// Effects
+// ----------------------------------------
+@mixin text-shadow($x: 0, $y: 2px, $blur: 0, $color: rgba(0,0,0,.15) ) {
+	text-shadow: $x $y $blur $color;
+}
+
+@mixin shadow($shadow: 0 1px 2px 0px rgba(0,0,0,.5)) {
+	box-shadow: $shadow;
+}
+
+@mixin fade($fade: 0.6) {
+	@include transition;
+  	opacity: 1.0;
+  	
+  	&:hover {
+	  	opacity: $fade;
+	}
+}
+
+
+// Gradients
+// ----------------------------------------
+@mixin gradient($origin: top, $start: $color-white, $stop: $gray-light) {
+	background-color: $stop;
+	background-image: -webkit-linear-gradient($origin, $start, $stop);
+	background-image: -moz-linear-gradient($origin, $start, $stop);
+	background-image: -o-linear-gradient($origin, $start, $stop);
+	background-image: -ms-linear-gradient($origin, $start, $stop);
+	background-image: linear-gradient($origin, $start, $stop);
+}
+
+// 4 Point Gradiant
+@mixin gradient-4point($origin: top, $start: $gray-light 0px, $midpoint1: $gray-light 180px, $midpoint2: $gray-lighter 260px, $stop: $gray-lighter 420px) {
+	background-color: $stop;
+	background-image: -webkit-linear-gradient($origin, $start, $midpoint1, $midpoint2, $stop);
+	background-image: -moz-linear-gradient($origin, $start, $midpoint1, $midpoint2, $stop);
+	background-image: -o-linear-gradient($origin, $start, $midpoint1, $midpoint2, $stop);
+	background-image: -ms-linear-gradient($origin, $start, $midpoint1, $midpoint2, $stop);
+	background-image: linear-gradient($origin, $start, $midpoint1, $midpoint2, $stop);
+}
+
+// Border Radial Gradient
+@mixin border-radial-gradient($center-color, $outer-color) {
+	-moz-border-image: -moz-radial-gradient($center-color, $outer-color);
+	-webkit-border-image: -webkit-radial-gradient($center-color, $outer-color);
+	border-image: radial-gradient($center-color, $outer-color);
+	border-image-slice: 1;
+}
+
+// Border Linear Gradient
+@mixin border-linear-gradient($direction, $color-one, $color-two) {
+	-moz-border-image: -moz-linear-gradient($direction, $color-one, $color-two);
+	-webkit-border-image: -webkit-linear-gradient($direction, $color-one, $color-two);
+	border-image: linear-gradient(to $direction, $color-one, $color-two);
+	border-image-slice: 1;
+}
+
+
+// Width and height
+// ----------------------------------------
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+
+// SVG background image
+// ----------------------------------------
+@mixin svg($image, $width, $height) {
+	background: url(#{$image}.svg) no-repeat center center;
+	background-size: $width $height;
+	display: inline-block;
+	@include size($width, $height);
+}
+
+
+// Retina images
+// ----------------------------------------
+@mixin background-image($image, $extension: jpg, $width: 100%, $height: 100%) {
+	background-image: url(#{$image}.#{$extension});
+	
+	@media #{$retina} {
+		background: {
+			image: url(#{$image}@2x.#{$extension});
+			size: $width $height;
+		}
+	}
+}
+
+
+// Font Smoothing
+// ----------------------------------------
+@mixin font-smoothing {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+// Font face
+// ----------------------------------------
+@mixin font-face($font-name, $font-path, $font-file, $font-weight: normal) {
+	@font-face {
+	    font-family: '#{$font-name}';
+	    src: url('#{$font-path}/#{$font-file}.eot');
+	    src: url('#{$font-path}/#{$font-file}.eot?#iefix') format('embedded-opentype'),
+	         url('#{$font-path}/#{$font-file}.woff') format('woff'),
+	         url('#{$font-path}/#{$font-file}.ttf') format('truetype'),
+	         url('#{$font-path}/#{$font-file}.svg##{$font-name}') format('svg');
+		font: {
+			weight: $font-weight;
+			style: normal;
+		}
+	}
+}
+
+@mixin font-styles {
+	font: {
+		weight: normal;
+		style: normal;
+	}
+}
+
+
+// Form placeholder color
+// ----------------------------------------
+@mixin placeholder-color($color) {
+	::-webkit-input-placeholder {
+		color: $color;
+	}
+	:-moz-placeholder {
+		color: $color;
+	}
+	::-moz-placeholder {
+		color: $color;
+	}
+	:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+
+// Box sizing
+// ----------------------------------------
+@mixin box-sizing($box: border-box) {
+	-webkit-box-sizing: $box;
+	-moz-box-sizing: $box;
+	box-sizing: $box;
+}
+
+
+
+// Clearfix
+// ----------------------------------------
+@mixin clearfix {
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+}
+
+
+// Media queries
+// ----------------------------------------
+@mixin media($viewport) {
+	$screen: "only screen";
+
+	// Min-widths
+	@if $viewport == medium-up {
+		@media #{$screen} and (min-width: $screen-medium) {
+			@content;
+		}
+	}
+	@if $viewport == large-up {
+		@media #{$screen} and (min-width: $screen-large) {
+			@content;
+		}
+	}
+	@if $viewport == xlarge-up {
+		@media #{$screen} and (min-width: $screen-xlarge) {
+			@content;
+		}
+	}
+
+	// Screen specific widths
+	@if $viewport == small-only {
+		@media #{$screen} and (max-width: ($screen-medium - 1px)) {
+			@content;
+		}
+	}
+	@if $viewport == medium-only {
+		@media #{$screen} and (min-width: $screen-medium) and (max-width: ($screen-large - 1px)) {
+			@content;
+		}
+	}
+	@if $viewport == large-only {
+		@media #{$screen} and (min-width: $screen-large) and (max-width: ($screen-xlarge - 1px)) {
+			@content;
+		}
+	}
+	@if $viewport == xlarge-only {
+		@media #{$screen} and (min-width: $screen-xlarge) {
+			@content;
+		}
+	}
+
+	// Retina
+	@else if $viewport == retina {
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+			@content;
+		}
+	}
+}

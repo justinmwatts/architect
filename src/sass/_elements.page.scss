@@ -1,0 +1,16 @@
+////
+// Elements - Pages
+////
+
+html {
+	background-color: $color-purple;
+	color: $color-white;
+	font: {
+		family: $base-font;
+		size: $base-font-size;
+		weight: $base-font-weight;
+		style: normal;
+	}
+	@include font-smoothing();
+	line-height: $base-line-height;
+}
