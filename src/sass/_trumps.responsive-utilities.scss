@@ -1,3 +1,11 @@
 ////
 // Trumps - Responsive utilities
 ////
+
+.mobile-only {
+	display: block;
+
+	@include media(medium-up) {
+		display: none;
+	}
+}

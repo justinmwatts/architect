@@ -20,16 +20,50 @@
 	
 } // nav
 
+.nav-hidden {
+	background-color: $color-gray-darker;
+	height: 100%;
+	position: fixed;
+	right: -100%;
+	@include transition(.2s);
+	top: 0;
+	width: 100%;
+	z-index: 9998;
+
+	&.is-active {
+		right: 0;
+	}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 10px 0 40px 0;
+	}
+
+	&__list-item {
+		padding: 11px 0;
+		text-align: center;
+	}
+
+	&__link {
+		color: $color-white;
+		font-size: 18px;
+		@include transition();
+	}
+} // nav-hidden
+
 
 // Nav Toggle
 // ------------------------------------------------------------
 .nav-toggle {
 	background-color: transparent;
 	padding: 15px 8px 5px 8px;
+	position: relative;
 	@include transition();
+	z-index: 9999;
 
 	&:hover {
-		background-color: $color-blue;
+		background-color: transparent;
 	}
 
 	&__bar {
@@ -37,7 +71,7 @@
 		display: block;
 		height: 2px;
 		margin-bottom: 12px;
-		@include transition(.2s);
+		@include transition();
 		width: 32px;
 	}
 

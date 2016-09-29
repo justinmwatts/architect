@@ -24,6 +24,12 @@
 
 // Components - Header
 // ----------------------------------------
+.nav-toggle {
+	left: 10px;
+	position: absolute;
+	top: 0;
+}
+
 .header {
 	background-color: darken($color-purple, 6%);
 	padding: 0 0 20px 0;
