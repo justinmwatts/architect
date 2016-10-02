@@ -1,33 +1,34 @@
 {
-  "name": "architect",
-  "version": "1.1.0",
-  "description": "Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/justinmwatts/architect.git"
-  },
-  "keywords": [
-    "Front",
-    "End",
-    "Framework"
-  ],
-  "author": "Justin Watts",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/justinmwatts/architect/issues"
-  },
-  "homepage": "http://architect.justinwatts.co/",
-  "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-concat-util": "^0.5.5",
-    "gulp-connect": "^5.0.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.0"
-  }
+	"name": "architect",
+	"version": "1.1.0",
+	"description": "Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/justinmwatts/architect.git"
+	},
+	"keywords": [
+		"Front",
+		"End",
+		"Framework"
+	],
+	"author": "Justin Watts",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/justinmwatts/architect/issues"
+	},
+	"homepage": "http://architect.justinwatts.co/",
+	"devDependencies": {
+		"del": "^2.2.2",
+		"gulp": "^3.9.1",
+		"gulp-concat-util": "^0.5.5",
+		"gulp-connect": "^5.0.0",
+		"gulp-eslint": "^3.0.1",
+		"gulp-sass": "^2.3.2",
+		"gulp-sourcemaps": "^1.6.0",
+		"gulp-uglify": "^2.0.0"
+	}
 }

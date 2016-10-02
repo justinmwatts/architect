@@ -3,24 +3,28 @@
 ////
 
 .nav {
+	list-style: none;
+	margin: 0;
 
-	 &__list-item {
-		float: left;
+	> li {
+	 	display: block;
 		position: relative;
-
-		a {
+		
+		> a {
 			text-decoration: none;
 			display: block;
 		}
 	}
 
-	ul ul {
+	ul {
 		display: none;
 	}
-	
 } // nav
 
-.nav-hidden {
+
+// Mobile nav
+// ----------------------------------------
+.nav--mobile {
 	background-color: $color-gray-darker;
 	height: 100%;
 	position: fixed;
@@ -35,27 +39,22 @@
 	}
 
 	&__list {
-		list-style: none;
-		margin: 0;
 		padding: 10px 0 40px 0;
-	}
-
-	&__list-item {
-		padding: 11px 0;
-		text-align: center;
 	}
 
 	&__link {
 		color: $color-white;
 		font-size: 18px;
+		padding: 11px 0;
+		text-align: center;
 		@include transition();
 	}
-} // nav-hidden
+} // nav--mobile
 
 
-// Nav Toggle
+// Nav button
 // ------------------------------------------------------------
-.nav-toggle {
+.nav-button {
 	background-color: transparent;
 	padding: 15px 8px 5px 8px;
 	position: relative;
@@ -75,10 +74,10 @@
 		width: 32px;
 	}
 
-	// Active nav toggle
+	// Active nav button
 	&.is-active {
 
-		.nav-toggle__bar {
+		.nav-button__bar {
 
 			&:first-child {
 				position: relative;
@@ -95,4 +94,4 @@
 			}
 		}
 	} // &.is-active
-} // nav-toggle
+} // nav-button

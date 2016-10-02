@@ -4,13 +4,17 @@
 
 html {
 	background-color: $color-purple;
-	color: $color-white;
+	color: $color-text;
 	font: {
 		family: $base-font;
-		size: $base-font-size;
+		size: 14px;
 		weight: $base-font-weight;
 		style: normal;
 	}
 	@include font-smoothing();
 	line-height: $base-line-height;
+
+	@include media(medium-up) {
+		font-size: $base-font-size;
+	}
 }

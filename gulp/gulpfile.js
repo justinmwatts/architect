@@ -3,9 +3,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var eslint = require('gulp-eslint');
+var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat-util');
 var del = require('del');
-var sourcemaps = require('gulp-sourcemaps');
 var connect = require('gulp-connect');
 
 var config = {
@@ -22,7 +23,7 @@ gulp.task('clean', function () {
 
 // SASS
 gulp.task('sass', ['clean'], function () {
-	gulp.src(config.srcDir + config.sassPattern)
+	return gulp.src(config.srcDir + config.sassPattern)
 		.pipe(sass({
 			outputStyle: 'compressed'
 		}).on('error', sass.logError))
@@ -30,8 +31,8 @@ gulp.task('sass', ['clean'], function () {
 		.pipe(connect.reload());
 });
 
-// Scripts
-gulp.task('scripts', ['clean'], function () {
+// JavaScript
+gulp.task('javascript', ['clean'], function () {
 	return gulp.src(config.srcDir + config.scriptsPattern)
 		.pipe(sourcemaps.init())
 		.pipe(uglify())
@@ -41,9 +42,24 @@ gulp.task('scripts', ['clean'], function () {
 		.pipe(connect.reload());
 });
 
+// ESLint
+gulp.task('lintJavascript', function () {
+	return gulp.src([config.srcDir + config.scriptsPattern, '!node_modules/**'])
+		.pipe(eslint())
+		.pipe(eslint.result(result => {
+			// Called for each ESLint result. 
+			console.log(`ESLint result: ${result.filePath}`);
+			console.log(`# Messages: ${result.messages.length}`);
+			console.log(`# Warnings: ${result.warningCount}`);
+			console.log(`# Errors: ${result.errorCount}`);
+		}))
+		.pipe(eslint.format())
+		.pipe(eslint.failAfterError());
+});
+
 // HTML
 gulp.task('html', function () {
-	gulp.src(config.htmlPattern)
+	return gulp.src(config.htmlPattern)
 		.pipe(connect.reload());
 });
 
@@ -56,12 +72,13 @@ gulp.task('connect', function () {
 	});
 });
 
-// Watch - run our task when a file changes
-gulp.task('watch', function () {
+// Watch - Run our tasks when a file changes
+gulp.task('watch', ['lintJavascript'], function () {
 	gulp.watch([config.srcDir + config.sassPattern], ['sass']);
-	gulp.watch(config.srcDir + config.scriptsPattern, ['scripts']);
+	gulp.watch(config.srcDir + config.scriptsPattern, ['lintJavascript', 'javascript']);
 	gulp.watch([config.htmlPattern], ['html']);
 });
 
 // Default task
-gulp.task('default', ['sass', 'scripts', 'connect', 'watch']);
+// Compile and lint everything first, then start the webserver and watch
+gulp.task('default', ['sass', 'lintJavascript', 'javascript', 'connect', 'watch']);

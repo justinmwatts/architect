@@ -1,0 +1,11 @@
+{
+	"rules": {
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"strict": "off"
+	},
+	"env": {
+		"jquery": true
+	}
+}
