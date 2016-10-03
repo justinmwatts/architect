@@ -47,6 +47,17 @@ gulp.task('javascript', ['clean'], function () {
 		.pipe(connect.reload());
 });
 
+// JavaScript Demo
+gulp.task('demoJavascript', ['clean'], function () {
+	return gulp.src('../demo/*.js')
+		.pipe(sourcemaps.init())
+		.pipe(uglify())
+		.pipe(concat('demo.min.js'))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('../dist'))
+		.pipe(connect.reload());
+});
+
 // ESLint
 gulp.task('lintJavascript', function () {
 	return gulp.src([config.srcDir + config.scriptsPattern, '!node_modules/**'])
@@ -82,8 +93,11 @@ gulp.task('watch', ['lintJavascript'], function () {
 	gulp.watch([config.srcDir + config.sassPattern], ['sass']);
 	gulp.watch(config.srcDir + config.scriptsPattern, ['lintJavascript', 'javascript']);
 	gulp.watch([config.htmlPattern], ['html']);
+
+	// DEMO
+	gulp.watch('../demo/*.js', ['demoJavascript']);
 });
 
 // Default task
 // Compile and lint everything first, then start the webserver and watch
-gulp.task('default', ['sass', 'lintJavascript', 'javascript', 'connect', 'watch']);
+gulp.task('default', ['sass', 'lintJavascript', 'javascript', 'demoJavascript', 'connect', 'watch']);
