@@ -16,9 +16,14 @@ var config = {
 	htmlPattern: '../*.html'
 };
 
+var JAVASCRIPT = [
+	'../src/js/architect.core.js',
+	'../src/js/*.js'
+];
+
 // Clean dist
 gulp.task('clean', function () {
-	return del(['dist']);
+	del(['dist']);
 });
 
 // SASS
@@ -27,18 +32,18 @@ gulp.task('sass', ['clean'], function () {
 		.pipe(sass({
 			outputStyle: 'compressed'
 		}).on('error', sass.logError))
-		.pipe(gulp.dest('../dist/css'))
+		.pipe(gulp.dest('../dist'))
 		.pipe(connect.reload());
 });
 
 // JavaScript
 gulp.task('javascript', ['clean'], function () {
-	return gulp.src(config.srcDir + config.scriptsPattern)
+	return gulp.src(JAVASCRIPT)
 		.pipe(sourcemaps.init())
 		.pipe(uglify())
 		.pipe(concat('app.min.js'))
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest('../dist/js'))
+		.pipe(gulp.dest('../dist'))
 		.pipe(connect.reload());
 });
 

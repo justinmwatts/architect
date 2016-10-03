@@ -10,17 +10,25 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	
-	<link rel="stylesheet" href="dist/css/app.css" />
-	<link rel="stylesheet" href="dist/css/demo.css" />
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="dist/js/app.min.js" type="text/javascript"></script>
-
+	<link rel="stylesheet" href="dist/app.css" />
+	<link rel="stylesheet" href="dist/demo.css" />
 </head>
 <body>
 
 	<header class="header">
 		<div class="container">
+
+			<div class="row">
+				<div class="col-12">
+					<h1 class="header__heading text-center top50">Architect</h1>
+					<h2 class="header__sub-heading text-center">Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.</h2>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
+			<div class="row top50 bottom50">
+				<div class="col-12">
+					<a href="https://github.com/justinmwatts/architect" class="button button--xlarge button--center" role="button" target="_blank">Download Architect</a>
+				</div><!--/.col-12-->
+			</div><!--/.row-->
 
 			<div class="mobile-only">
 				<button class="nav-button js-nav-mobile-button" type="button">
@@ -52,17 +60,6 @@
 				</nav>
 			</div><!--/.mobile-only-->
 
-			<div class="row">
-				<div class="col-12">
-					<h1 class="header__heading text-center top50">Architect</h1>
-					<h2 class="header__sub-heading text-center">Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.</h2>
-				</div><!--/.col-12-->
-			</div><!--/.row-->
-			<div class="row top50 bottom50">
-				<div class="col-12">
-					<a href="https://github.com/justinmwatts/architect" class="button button--xlarge button--center" role="button" target="_blank">Download Architect</a>
-				</div><!--/.col-12-->
-			</div><!--/.row-->
 		</div><!--/.container-->
 	</header><!--/.header-->
 
@@ -73,12 +70,14 @@
 				<section class="row top20" id="typography">
 					<div class="col-12">
 						<h2>Typography</h2>
-						<h1>Heading 1</h1>
-						<h2>Heading 2</h2>
-						<h3>Heading 3</h3>
-						<h4>Heading 4</h4>
-						<h5>Heading 5</h5>
-						<h6>Heading 6</h6>
+						<h1>H1 Heading</h1>
+						<h2>H2 Heading</h2>
+						<h3>H3 Heading</h3>
+						<h4>H4 Heading</h4>
+						<h5>H5 Heading</h5>
+						<h6>H6 Heading</h6>
+						<br>
+						<p>Body Copy</p>
 						<p>Lorem ipsum dolor sit amet, eros auctor odio magna, pellentesque nec in vitae, facilisis auctor dui leo sollicitudin scelerisque lacus, per odio. Elit molestie turpis nec nibh. Vel eleifend faucibus corporis diam eget sed.</p>
 						<p>Lorem ipsum dolor sit amet, eros auctor odio magna, pellentesque nec in vitae, facilisis auctor dui leo sollicitudin scelerisque lacus, per odio. Elit molestie turpis nec nibh. Vel eleifend faucibus corporis diam eget sed.</p>
 						<br>
@@ -127,7 +126,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h2>Colors</h2>
-							<h4>Monochromatic Palette</h4>
+							<h4>Monochromatic palette</h4>
 							<div class="color color--black">$color-black</div>
 							<div class="color color--gray-darker">$color-gray-darker</div>
 							<div class="color color--gray-dark">$color-gray-dark</div>
@@ -140,7 +139,7 @@
 
 					<div class="row">
 						<div class="col-12">
-							<h4>Brand Palette</h4>
+							<h4>Brand palette</h4>
 							<div class="color color--blue">$color-blue</div>
 							<div class="color color--purple">$color-purple</div>
 							<div class="color color--green">$color-green</div>
@@ -152,7 +151,7 @@
 
 				<section class="row top40" id="media-queries">
 					<div class="col-12">
-						<h2>Media Queries</h2>
+						<h2>Media queries</h2>
 						<p>These are the media queries used for the grid system. They are available with media query mixin:</p>
 						<figure class="highlight top10">
 							<code>
@@ -210,7 +209,7 @@
 				<section class="top40" id="grid-system">
 					<div class="row">
 						<div class="col-12">
-							<h2>Basic 12 Column Grid</h2>
+							<h2>Grid system</h2>
 							<p>The grid column amount can easily be changed to any desired amount. The grid is set to 12 columns by default. In _settings.global.scss, use $grid-cols to update the column amount. Column gutters are set to 10px by default. In _settings.global.scss, use $grid-col-gutter-width to update the gutter width.</p>
 						</div><!--/.col-12-->
 					</div><!--/.row-->
@@ -234,7 +233,7 @@
 				<section class="top40">
 					<div class="row">
 						<div class="col-12">
-							<h2>Column Offsets</h2>
+							<h3>Column offsets</h3>
 						</div><!--/.col-12-->
 					</div><!--/.row-->
 
@@ -246,7 +245,7 @@
 				<section class="top40">
 					<div class="row">
 						<div class="col-12">
-							<h2>Nesting</h2>
+							<h3>Nesting</h3>
 						</div><!--/.col-12-->
 					</div><!--/.row-->
 
@@ -264,7 +263,7 @@
 
 				<section class="row top40">
 					<div class="col-12">
-						<h2>Grid Options</h2>
+						<h3>Grid options</h3>
 						<p>Choose fluid or fixed grid widths in _settings.globals.scss.</p>
 						<figure class="highlight top10">
 							<code>
@@ -298,7 +297,7 @@
 				<section class="top40">
 					<div class="row">
 						<div class="col-12">
-							<h2>Example: Small, Medium, Large, xLarge Columns</h2>
+							<h3>Example: small, medium, large, xlarge columns</h3>
 							<p>This example takes it to the extreme and is not very practical but it demonstrates the grid's flexibility. Having this flexibility, allows designers to not be restricted to a single grid layout for various screen sizes.</p>
 						</div><!--/.col-12-->
 					</div><!--/.row-->
@@ -357,7 +356,8 @@
 		</div><!--/.row-->
 	</footer><!--/.container-->
 
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="dist/app.min.js" type="text/javascript"></script>
 
 </body>
 </html>
