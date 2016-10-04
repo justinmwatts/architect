@@ -1,7 +1,7 @@
 {
-	"name": "architect",
-	"version": "1.1.0",
-	"description": "Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.",
+	"name": "architectDocs",
+	"version": "",
+	"description": "",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

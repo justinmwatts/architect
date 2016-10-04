@@ -1,6 +1,6 @@
-! function () {
+'use strict';
 
-	'use strict';
+! function () {
 
 	var StickElement = function () {
 		// Default options

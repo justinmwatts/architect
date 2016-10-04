@@ -1,4 +1,3 @@
-// Core
 ! function ($) {
 
 	'use strict';

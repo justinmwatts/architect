@@ -1,6 +1,6 @@
-! function ($) {
+'use strict';
 
-	'use strict';
+! function ($) {
 
 	var NavHidden = function () {
 		// Default options

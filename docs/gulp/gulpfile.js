@@ -10,16 +10,18 @@ var del = require('del');
 var connect = require('gulp-connect');
 
 var SASS = [
-	'../src/sass/*.scss'
+	'../sass/*.scss',
+	'../../src/sass/_settings.colors.scss',
+	'../../src/sass/_settings.globals.scss',
+	'../../src/sass/_tools.custom-mixins.scss'
 ];
 
 var JAVASCRIPT = [
-	'../src/js/architect.app.js', // architect.app.js must be compiled first
-	'../src/js/*.js'
+	'../js/*.js'
 ];
 
 var HTML = [
-	'../*.html'
+	'../../*.html'
 ];
 
 // Clean dist
@@ -42,7 +44,7 @@ gulp.task('javascript', ['clean'], function () {
 	return gulp.src(JAVASCRIPT)
 		.pipe(sourcemaps.init())
 		.pipe(uglify())
-		.pipe(concat('app.min.js'))
+		.pipe(concat('docs.min.js'))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('../dist'))
 		.pipe(connect.reload());
@@ -50,7 +52,7 @@ gulp.task('javascript', ['clean'], function () {
 
 // ESLint
 gulp.task('lintJavascript', function () {
-	return gulp.src(['../src/js/*.js', '!node_modules/**'])
+	return gulp.src(['../js/*.js', '!node_modules/**'])
 		.pipe(eslint())
 		.pipe(eslint.result(result => {
 			// Called for each ESLint result. 
@@ -70,13 +72,13 @@ gulp.task('html', function () {
 });
 
 // Connect webserver
-gulp.task('connect', function () {
-	connect.server({
-		root: '../',
-		port: 8888,
-		livereload: true
-	});
-});
+//gulp.task('connect', function () {
+//	connect.server({
+//		root: '../',
+//		port: 8888,
+//		livereload: true
+//	});
+//});
 
 // Watch - Run our tasks when a file changes
 gulp.task('watch', ['lintJavascript'], function () {
@@ -87,4 +89,4 @@ gulp.task('watch', ['lintJavascript'], function () {
 
 // Default task
 // Compile and lint everything first, then start the webserver and watch
-gulp.task('default', ['sass', 'lintJavascript', 'javascript', 'connect', 'watch']);
+gulp.task('default', ['sass', 'lintJavascript', 'javascript', 'watch']);
