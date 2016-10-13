@@ -21,12 +21,12 @@
 			<div class="row">
 				<div class="col-12">
 					<h1 class="header__heading text-center top50">Architect</h1>
-					<h2 class="header__sub-heading text-center">Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.</h2>
+					<h2 class="header__sub-heading text-center">Lighweight CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Responsive mobile-first. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM (Block, Element, Modifier) methodology. Built with SASS. Includes a lighweight JavaScript plugin library.</h2>
 				</div><!--/.col-12-->
 			</div><!--/.row-->
 			<div class="row top50 bottom50">
 				<div class="col-12">
-					<a href="https://github.com/justinmwatts/architect" class="button button--xlarge button--center" role="button" target="_blank">Download Architect</a>
+					<a href="https://github.com/justinmwatts/architect" class="button button--xlarge button--center" role="button" target="_blank">GitHub Repo</a>
 				</div><!--/.col-12-->
 			</div><!--/.row-->
 
@@ -36,8 +36,9 @@
 					<span class="nav-button__bar"></span>
 				</button><!--/.nav-button-->
 
-				<nav>
-					<ul class="nav nav--mobile js-nav-mobile">
+				<nav class="nav nav--mobile js-nav-mobile">
+					<h3 class="nav--mobile__category">CSS</h3>
+					<ul>
 						<li>
 							<a class="nav--mobile__link js-nav-mobile-close" href="#typography">Typography</a>
 						</li>
@@ -56,8 +57,17 @@
 						<li>
 							<a class="nav--mobile__link js-nav-mobile-close" href="#grid-system">Grid System</a>
 						</li>
-					</ul><!--nav-->
-				</nav>
+					</ul>
+					<h3 class="nav--mobile__category">JavaScript</h3>
+					<ul>
+						<li>
+							<a class="nav--mobile__link js-nav-mobile-close" href="#hidden-nav">Hidden Nav</a>
+						</li>
+						<li>
+							<a class="nav--mobile__link js-nav-mobile-close" href="#sticky-element">Sticky Element</a>
+						</li>
+					</ul>
+				</nav><!--nav-->
 			</div><!--/.mobile-only-->
 
 		</div><!--/.container-->
@@ -69,7 +79,7 @@
 			<article class="col-10" role="main">
 				<section class="row top20" id="typography">
 					<div class="col-12">
-						<h2>Typography</h2>
+						<h2 class="docs__category-heading">Typography</h2>
 						<h1>H1 Heading</h1>
 						<h2>H2 Heading</h2>
 						<h3>H3 Heading</h3>
@@ -87,7 +97,7 @@
 
 				<section class="row top20" id="buttons">
 					<div class="col-12">
-						<h2>Buttons</h2>
+						<h2 class="docs__category-heading">Buttons</h2>
 						<br>
 						<a href="#" class="button button--xsmall" role="button">xSmall Button</a>
 						<br><br>
@@ -104,7 +114,7 @@
 				<section class="row top20" id="lists">
 					<div class="row">
 						<div class="col-12">
-							<h2>Lists</h2>
+							<h2 class="docs__category-heading">Lists</h2>
 							<h4>Unordered lists</h4>
 							<ul>
 								<li>List item 1</li>
@@ -125,7 +135,7 @@
 				<section class="top20" id="colors">
 					<div class="row">
 						<div class="col-12">
-							<h2>Colors</h2>
+							<h2 class="docs__category-heading">Colors</h2>
 							<h4>Monochromatic palette</h4>
 							<div class="color color--black">$color-black</div>
 							<div class="color color--gray-darker">$color-gray-darker</div>
@@ -151,8 +161,8 @@
 
 				<section class="row top40" id="media-queries">
 					<div class="col-12">
-						<h2>Media queries</h2>
-						<p>These are the media queries used for the grid system. They are available with media query mixin:</p>
+						<h2 class="docs__category-heading">Media queries</h2>
+						<p>These are the media queries used for the grid system. They are available with the media query mixin:</p>
 						<figure class="highlight top10">
 							<code>
 								<span class="code">@include media() { ... }</span>
@@ -209,8 +219,8 @@
 				<section class="top40" id="grid-system">
 					<div class="row">
 						<div class="col-12">
-							<h2>Grid system</h2>
-							<p>The grid column amount can easily be changed to any desired amount. The grid is set to 12 columns by default. In _settings.global.scss, use $grid-cols to update the column amount. Column gutters are set to 10px by default. In _settings.global.scss, use $grid-col-gutter-width to update the gutter width.</p>
+							<h2 class="docs__category-heading">Grid system</h2>
+							<p>The grid column amount can easily be changed to any desired amount. The grid is set to 12 columns by default.</p>
 						</div><!--/.col-12-->
 					</div><!--/.row-->
 
@@ -264,7 +274,25 @@
 				<section class="row top40">
 					<div class="col-12">
 						<h3>Grid options</h3>
-						<p>Choose fluid or fixed grid widths in _settings.globals.scss.</p>
+						<p>Grid settings are in _settings.globals.scss.</p>
+
+						<p>Set the grid to any number of columns.</p>
+						<figure class="highlight top10">
+							<code>
+								<span class="code">// For a 16 column grid</span>
+								<span class="code">$grid-cols: 16;</span>
+							</code>
+						</figure><!--/.highlight-->
+
+						<p>Adjust the grid gutter widths.</p>
+						<figure class="highlight top10">
+							<code>
+								<span class="code">// For 12px gutters</span>
+								<span class="code">$grid-col-gutter-width: 12px;</span>
+							</code>
+						</figure><!--/.highlight-->
+
+						<p>Choose fluid or fixed grid widths.</p>
 						<figure class="highlight top10">
 							<code>
 								<span class="code">// Fluid grid widths</span>
@@ -313,36 +341,93 @@
 					</div><!--/.row-->
 				</section>
 
+				<section class="row top120" id="javascript">
+					<div class="col-12">
+						<h2 class="docs__heading">JavaScript</h2>
+					</div><!--/.col-12-->
+				</section><!--/.row-->
+
+				<section class="row top20" id="hidden-nav">
+					<div class="col-12">
+						<h2 class="docs__category-heading">Hidden Navigation</h2>
+						<p>Customize:</p>
+						<figure class="highlight top10">
+							<code>
+								<span class="code">// Create a new instance. Accepts one parameter as an object for options.</span>
+								<span class="code">var navMobile = new Architect.Plugins.NavHidden({</span>
+								<span class="code code--tab">buttonToggleClass: 'js-nav-mobile-button',</span>
+								<span class="code code--tab">menuClass: 'js-nav-mobile',</span>
+								<span class="code code--tab">buttonClose: 'js-nav-mobile-close'</span>
+								<span class="code">});</span>
+
+								<span class="code">// Invoke the init method to initalize the plugin.</span>
+								<span class="code">navMobile.init();</span>
+							</code>
+						</figure><!--/.highlight-->
+					</div><!--/.col-12-->
+				</section><!--/.row-->
+
+				<section class="row top20" id="sticky-element">
+					<div class="col-12">
+						<h2 class="docs__category-heading">Sticky Element</h2>
+						<p>Customize:</p>
+						<figure class="highlight top10">
+							<code>
+								<span class="code">// Create a new instance. Accepts one parameter as an object for options.</span>
+								<span class="code">var myStickElement = new Architect.Plugins.StickElement({</span>
+								<span class="code code--tab">stickyElement: 'js-sticky-element',</span>
+								<span class="code code--tab">anchor: 'js-sticky-element-anchor'</span>
+								<span class="code">});</span>
+
+								<span class="code">// Invoke the init method to initalize the plugin.</span>
+								<span class="code">myStickElement.init();</span>
+							</code>
+						</figure><!--/.highlight-->
+					</div><!--/.col-12-->
+				</section><!--/.row-->
+
 				<section class="row top100">
 					<div class="col-12">
-						<a href="https://github.com/justinmwatts/architect" class="button button--xlarge button--center" role="button" target="_blank">Download Architect</a>
+						<a href="https://github.com/justinmwatts/architect" class="button button--xlarge button--center" role="button" target="_blank">GitHub Repo</a>
 					</div><!--/.col-12-->
 				</section><!--/.row-->
 			</article><!--/.col-10-->
 
 			<aside class="col-2 mobile-hide">
-				<nav>
-					<ul class="nav nav--docs js-nav-docs-sticky">
-						<li class="nav--docs__list-item">
-							<a class="nav--docs__link" href="#typography">Typography</a>
-						</li><!--/.nav--docs__list-item-->
-						<li class="nav--docs__list-item">
-							<a class="nav--docs__link" href="#buttons">Buttons</a>
-						</li><!--/.nav--docs__list-item-->
-						<li class="nav--docs__list-item">
-							<a class="nav--docs__link" href="#lists">Lists</a>
-						</li><!--/.nav--docs__list-item-->
-						<li class="nav--docs__list-item">
-							<a class="nav--docs__link" href="#colors">Colors</a>
-						</li><!--/.nav--docs__list-item-->
-						<li class="nav--docs__list-item">
-							<a class="nav--docs__link" href="#media-queries">Media Queries</a>
-						</li><!--/.nav--docs__list-item-->
-						<li class="nav--docs__list-item">
-							<a class="nav--docs__link" href="#grid-system">Grid System</a>
-						</li><!--/.nav--docs__list-item-->
-					</ul><!--nav-->
-				</nav>
+				<nav class="nav nav--docs js-nav-docs-sticky">
+					<ul>
+						<li>
+							<h5 class="nav--docs__heading">CSS</h5>
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#typography">Typography</a>
+							</li><!--/.nav--docs__list-item-->
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#buttons">Buttons</a>
+							</li><!--/.nav--docs__list-item-->
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#lists">Lists</a>
+							</li><!--/.nav--docs__list-item-->
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#colors">Colors</a>
+							</li><!--/.nav--docs__list-item-->
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#media-queries">Media Queries</a>
+							</li><!--/.nav--docs__list-item-->
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#grid-system">Grid System</a>
+							</li><!--/.nav--docs__list-item-->
+						</li>
+						<li>
+							<h5 class="nav--docs__heading">JavaScript</h5>
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#hidden-nav">Hidden Nav</a>
+							</li><!--/.nav--docs__list-item-->
+							<li class="nav--docs__list-item">
+								<a class="nav--docs__link" href="#sticky-element">Sticky Element</a>
+							</li><!--/.nav--docs__list-item-->
+						</li>
+					</ul>
+				</nav><!--nav-->
 			</aside><!--/.col-2-->
 
 		</div><!--row-->

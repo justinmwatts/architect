@@ -16,11 +16,35 @@
 // ------------------------------------------------------------
 .code {
 	display: block;
+
+	&--tab {
+		margin-left: 30px;
+	}
 }
 
 
 // Components
 // ------------------------------------------------------------
+
+
+// Components - Docs
+// ----------------------------------------
+.docs {
+
+	&__heading {
+		font-size: 20px;
+
+		@include media(medium-up) {
+			font-size: 36px;
+		}
+	}
+	
+	&__category-heading {
+		border-bottom: 2px solid darken($color-purple, 7%);
+		padding-bottom: 10px;
+	}
+} // docs
+
 
 // Components - Header
 // ----------------------------------------
@@ -53,30 +77,27 @@
 } // heading
 
 
+// Components - Mobile navigation
+// ----------------------------------------
+.nav--mobile {
+
+	&__category {
+		padding: 11px 0;
+		text-align: center;
+	}
+}
+
+
 // Components - Navigation
 // ----------------------------------------
 .nav--docs {
-	background-color: $color-gray-darker;
 	height: 100%;
 	margin-top: 20px;
-	position: fixed;
+	position: relative;
 	@include transition(.2s);
 	top: 0;
 	width: 100%;
 	z-index: 9998;
-
-	@include media(small-only) {
-		right: -100%;
-	}
-
-	@include media(medium-up) {
-		background-color: transparent;
-		position: relative;
-	}
-
-	&.is-active {
-		/*right: 0; // used for small-only*/
-	}
 
 	&__list {
 		list-style: none;
@@ -84,24 +105,21 @@
 		padding: 10px 0 40px 0;
 	}
 
-	&__list-item {
-		padding: 11px 0;
-		text-align: center;
+	&__heading {
+		margin-top: 0;
+		padding-top: 8px;
+	}
 
-		@include media(medium-up) {
-			padding: 6px 0;
-			text-align: left;
-		}
+	&__list-item {
+		margin-left: 10px;
+		padding: 3px 0;
+		text-align: left;
 	}
 
 	&__link {
 		color: $color-white;
-		font-size: 18px;
+		font-size: 14px;
 		@include transition();
-
-		@include media(medium-up) {
-			font-size: 16px;
-		}
 	}
 } // nav--docs
 

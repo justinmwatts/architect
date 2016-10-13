@@ -3,10 +3,13 @@
 ////
 
 .nav {
-	list-style: none;
-	margin: 0;
 
-	> li {
+	> ul {
+		list-style: none;
+		margin: 0;
+	}
+
+	> ul > li {
 	 	display: block;
 		position: relative;
 		
@@ -16,7 +19,7 @@
 		}
 	}
 
-	ul {
+	> ul ul {
 		display: none;
 	}
 } // nav
@@ -27,6 +30,7 @@
 .nav--mobile {
 	background-color: $color-gray-darker;
 	height: 100%;
+	overflow-y: auto;
 	position: fixed;
 	right: -100%;
 	@include transition(.2s);
