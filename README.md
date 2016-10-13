@@ -7,7 +7,12 @@ Lighweight CSS framework with global CSS settings, default HTML element styling 
 1.1.3
 
 
-### Setup
+### Documentation
+
+<http://architect.justinwatts.co/>
+
+
+### Gulp
 
 Architect uses Gulp to compile sass/js, watch your sass/js/html for file updates and run the connect webserver.
 
@@ -18,11 +23,6 @@ $ gulp
 ```
 
 If you prefer another task runner, no problem. Architect will work with your choosing. Just remove the gulp director in the root.
-
-
-### Documentation
-
-<http://architect.justinwatts.co/>
 
 
 ### Creator
