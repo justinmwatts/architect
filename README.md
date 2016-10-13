@@ -1,6 +1,6 @@
 # Architect
 
-Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM (Block, Element, Modifier) methodology. Built with SASS. Includes a JavaScript plugin library.
+Front End Framework - Responsive mobile first CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM methodology. Built with SASS.
 
 
 ###Version
