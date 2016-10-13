@@ -17,8 +17,6 @@ $ npm install
 $ gulp
 ```
 
-Before starting a project with Architect, you'll want to remove the documentation assets from /docs in the root.
-
 If you prefer another task runner, no problem. Architect will work with your choosing. Just remove the gulp director in the root.
 
 
