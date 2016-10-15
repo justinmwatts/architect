@@ -1,6 +1,6 @@
 # Architect
 
-Lighweight CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Responsive mobile-first. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM (Block, Element, Modifier) methodology. Built with SASS. Includes a lighweight JavaScript plugin library.
+Lightweight CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Responsive mobile-first. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM (Block, Element, Modifier) methodology. Built with SASS. Includes a lightweight JavaScript plugin library.
 
 
 ###Version

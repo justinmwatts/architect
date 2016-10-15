@@ -33,13 +33,14 @@
 	overflow-y: auto;
 	position: fixed;
 	right: -100%;
-	@include transition(.2s);
+	@include transition(.15s);
 	top: 0;
 	width: 100%;
 	z-index: 9998;
 
 	&.is-active {
 		right: 0;
+		@include transition(.25s);
 	}
 
 	&__list {
@@ -60,9 +61,11 @@
 // ------------------------------------------------------------
 .nav-button {
 	background-color: transparent;
-	padding: 15px 8px 5px 8px;
+	height: 48px;
+	padding: 15px 11px 5px 11px;
 	position: relative;
 	@include transition();
+	width: 48px;
 	z-index: 9999;
 
 	&:hover {
@@ -74,8 +77,8 @@
 		display: block;
 		height: 2px;
 		margin-bottom: 12px;
-		@include transition();
-		width: 32px;
+		@include transition(.15s);
+		width: 100%;
 	}
 
 	// Active nav button
@@ -87,14 +90,14 @@
 				position: relative;
 				@include rotate(45deg);
 				top: 8px;
-				@include transition(.2s);
+				@include transition(.25s);
 			}
 
 			&:last-child {
 				position: relative;
 				@include rotate(135deg);
 				top: -6px;
-				@include transition(.2s);
+				@include transition(.25s);
 			}
 		}
 	} // &.is-active

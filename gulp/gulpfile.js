@@ -10,12 +10,12 @@ var del = require('del');
 var connect = require('gulp-connect');
 
 var SASS = [
-	'../src/sass/*.scss'
+	'../sass/*.scss'
 ];
 
 var JAVASCRIPT = [
-	'../src/js/architect.app.js', // architect.app.js must be compiled first
-	'../src/js/*.js'
+	'../js/architect.app.js', // architect.app.js must be compiled first
+	'../js/*.js'
 ];
 
 var HTML = [
@@ -50,7 +50,7 @@ gulp.task('javascript', ['clean'], function () {
 
 // ESLint
 gulp.task('lintJavascript', function () {
-	return gulp.src(['../src/js/*.js', '!node_modules/**'])
+	return gulp.src(['../js/*.js', '!node_modules/**'])
 		.pipe(eslint())
 		.pipe(eslint.result(result => {
 			// Called for each ESLint result. 
