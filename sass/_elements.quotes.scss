@@ -3,10 +3,13 @@
 ////
 
 blockquote {
+	border-left: 2px solid $color-gray-light;
+	padding: 2px  20px 2px 40px;
 	quotes: "“" "”";
 } // blockquote
 
 .quote {
+	font-style: italic;
 	text-indent: -0.42em;
 
 	&:before {
@@ -25,3 +28,7 @@ blockquote {
 		}
 	}
 } // quote
+
+.author {
+	color: $color-gray;
+}

@@ -14,11 +14,11 @@ $color-white:				#fff;
 
 // Brand Palette
 // ----------------------------------------
-$color-blue:				#12c1fc;
-$color-blue-highlight:	lighten($color-blue, 15%);
-$color-blue-shadow:		darken($color-blue, 15%);
+$color-turquoise:				#12c1fc;
+$color-turquoise-highlight:	lighten($color-turquoise, 15%);
+$color-turquoise-shadow:	darken($color-turquoise, 15%);
 
-$color-purple:				#171725;
+$color-blue: 				#1158d9;
 $color-green:				#5cb85c;
 $color-orange:				#f0ad4e;
 $color-red:				#d9534f;
@@ -29,5 +29,5 @@ $color-text:				$color-black;
 
 // Links
 // ----------------------------------------
-$color-link:				$color-blue;
-$color-link-hover:			$color-blue-shadow;
+$color-link:				$color-turquoise;
+$color-link-hover:			$color-turquoise-shadow;

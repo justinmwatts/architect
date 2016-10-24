@@ -28,7 +28,7 @@
 // Mobile nav
 // ----------------------------------------
 .nav--mobile {
-	background-color: $color-gray-darker;
+	background-color: $color-gray-lighter;
 	height: 100%;
 	overflow-y: auto;
 	position: fixed;
@@ -48,7 +48,7 @@
 	}
 
 	&__link {
-		color: $color-white;
+		color: $color-black;
 		font-size: 18px;
 		padding: 11px 0;
 		text-align: center;
@@ -61,6 +61,7 @@
 // ------------------------------------------------------------
 .nav-button {
 	background-color: transparent;
+	cursor: pointer;
 	height: 48px;
 	padding: 15px 11px 5px 11px;
 	position: relative;
@@ -73,7 +74,7 @@
 	}
 
 	&__bar {
-		background-color: $color-white;
+		background-color: $color-black;
 		display: block;
 		height: 2px;
 		margin-bottom: 12px;

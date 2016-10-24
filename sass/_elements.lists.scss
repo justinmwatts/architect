@@ -2,20 +2,31 @@
 // Elements - lists
 ////
 
-ul {
-	list-style: square outside;
+ul,
+ol {
 	margin: 10px 0 0 40px;
 }
 
+ul {
+	list-style: circle outside;
+}
+
 ol {
-	margin: 10px 0 0 40px;
+	list-style: decimal;
 }
 
 li > {
 
 	ul,
 	ol {
-		margin-left: 2 * $base-spacing-unit;
-		margin-bottom: 0;
+		margin: 0 0 0 30px;
 	}
+
+	ol {
+		list-style: circle outside;
+	}
+}
+
+li {
+	margin-top: 1px;
 }

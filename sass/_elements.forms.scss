@@ -1,0 +1,82 @@
+////
+// Elements - Forms
+////
+
+
+fieldset {
+	border: 1px solid $color-gray-light;
+	padding: 20px;
+	@include radius(3px);
+
+	@include media(medium-up) {
+		padding: 40px;
+	}
+}
+
+legend {
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 0 10px;
+}
+
+label {
+	display: block;
+}
+
+input,
+textarea {
+	border: 1px solid $color-gray-light;
+	display: block;
+	padding: 8px;
+	@include radius(3px);
+	width: 100%;
+
+	&.success {
+		border: 1px solid $color-green;
+		background-color: lighten($color-green, 40%);
+	}
+
+	&.error {
+		border: 1px solid $color-red;
+		background-color: lighten($color-red, 40%);
+	}
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: inline-block;
+	width: auto;
+}
+
+select {
+	height: 30px;
+	width: 75%;
+}
+
+.form {
+
+	&__item {
+		margin-bottom: 15px;
+	}
+
+	&__item--end {
+		margin-bottom: 0;
+	}
+	&__required {
+
+		&::after {
+			color: $color-red;
+			content: "*";
+			font-weight: 700;
+			left: 3px;
+			position: relative;
+			top: 0;
+		}
+	}
+
+	&__item-description {
+		color: $color-gray;
+		font-size: 12px;
+	}
+
+} // form

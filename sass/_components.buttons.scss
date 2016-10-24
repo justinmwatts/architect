@@ -3,7 +3,7 @@
 ////
 
 .button {
-	background-color: $color-blue;
+	background-color: $color-turquoise;
 	color: $color-white;
 	display: inline-block;
 	font-size: 18px;
@@ -14,10 +14,10 @@
 
 	&:hover,
 	&:focus {
-		background-color: darken($color-blue, 10%);
+		background-color: darken($color-turquoise, 10%);
 		color: $color-white;
 	}
-} // button
+}
 
 
 // Button Colors
@@ -52,6 +52,16 @@
 	&:focus {
 		background-color: darken($color-gray-lighter, 10%);
 		color: $color-gray-darker;
+	}
+}
+
+// Blue
+.button--blue {
+	background-color: $color-blue;
+
+	&:hover,
+	&:focus {
+		background-color: darken($color-blue, 10%);
 	}
 }
 
@@ -114,7 +124,7 @@
 }
 
 
-// Button Helpers
+// Button helpers
 // ----------------------------------------
 .button--center {
 	display: table;
