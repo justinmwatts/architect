@@ -4,7 +4,7 @@ Lightweight CSS framework with global CSS settings, default HTML element styling
 
 
 ###Version
-0.7.0
+0.7.1
 
 
 ### Documentation

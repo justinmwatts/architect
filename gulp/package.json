@@ -1,6 +1,6 @@
 {
 	"name": "architect",
-	"version": "0.7.0",
+	"version": "0.7.1",
 	"description": "Lightweight CSS framework with global CSS settings, default HTML element styling and an advanced grid system. Responsive mobile-first. Follows the ITCSS (Inverted Triangle CSS) philosophy and BEM (Block, Element, Modifier) methodology. Built with SASS. Includes a lightweight JavaScript plugin library.",
 	"main": "index.js",
 	"scripts": {
